@@ -7,6 +7,7 @@ export interface TimelineEntry {
   org: string;
   loc: string;
   bullets: string[];
+  industries?: string[];
 }
 
 export const ENTRIES: TimelineEntry[] = [
@@ -17,11 +18,12 @@ export const ENTRIES: TimelineEntry[] = [
     org: "Avalere Health",
     loc: "London, UK",
     bullets: [
-      "Shapes and aligns cross-functional strategic discussions at the EMEA regional level on competitor positioning, multi-product portfolio co-positioning, and product launches, driving go-to-market planning from pre-launch through mid-lifecycle and building client trust.",
+      "Shape and align cross-functional strategic discussions at the EMEA regional level on competitor positioning, multi-product portfolio co-positioning, and product launches, driving strategy and asset development for pre-launch and mid-lifecycle products.",
       "Oversees the simultaneous creation of up to 10 EMEA marketing assets involving 4 internal teams, to ensure assets meet the strategic priorities and needs of the client and their market representatives.",
       "Engages weekly with the client and numerous EMEA country brand leads to understand regional/country nuances and ensure marketing assets are developed in line with agreed strategy, ensuring efficient budget use and higher rate of adoption.",
       "Manages key financial tasks for a £950k client portfolio including writing Scope of Works (SOWs), invoicing, monthly revenue recognition, weekly project finance health reviews, and various client-specific financial tasks.",
     ],
+    industries: ["Pharmaceuticals"],
   },
   {
     type: "role",
@@ -35,6 +37,7 @@ export const ENTRIES: TimelineEntry[] = [
       "Owned and led an internal 1.5-hour workshop on new client growth; commended by Growth Director for expanding the company’s list of target customers and key job titles and for increasing RFPs received.",
       "Awarded the “Trailblazer Award” by colleagues as someone who “made an impact from day one — diving in headfirst, finding their rhythm fast, and making waves along the way.”",
     ],
+    industries: ["Pharmaceuticals"],
   },
   {
     type: "role",
@@ -45,6 +48,7 @@ export const ENTRIES: TimelineEntry[] = [
     bullets: [
       "Develop key communication pillars in line with client strategy, then translate them into Instagram posts and ad campaigns for Canada’s largest wooden box manufacturer.",
     ],
+    industries: ["Manufacturing"],
   },
   {
     type: "role",
@@ -57,6 +61,7 @@ export const ENTRIES: TimelineEntry[] = [
       "Established client acquisition/BD funnel by creating Excel database as CRM for prospective clients, networking with relevant parties at conferences, conducting introductory calls, participating in C-suite pitches with Partner and Director, and managing onboarding process; contributed to division’s £200,000 y-o-y revenue growth.",
       "Managed 20 audits across 3 Financial Services clients by overseeing 7 senior subject matter experts, finalising and delivering reports, and presenting summary packs to C-suite; established strong client relationships.",
     ],
+    industries: ["Financial Services", "Professional Services"],
   },
   {
     type: "project",
@@ -68,6 +73,7 @@ export const ENTRIES: TimelineEntry[] = [
       "Created project framework as team leader; narrowed target market to medical university sector by quantifying market size and growth trends, then established product, pricing, and promotion questions to be answered.",
       "Designed and led interviews of 12 professors to elucidate university processes for teaching anatomy and purchasing educational tools; used findings to refine product development and pricing recommendations (e.g., institutional license vs. per-device license).",
     ],
+    industries: ["Medical Technology"],
   },
   {
     type: "project",
@@ -78,6 +84,7 @@ export const ENTRIES: TimelineEntry[] = [
     bullets: [
       "Created market entry plan for a novel Peruvian payment product by identifying target industries, quantifying market sizes, forecasting revenues, and conducting due diligence; efforts contributed to the team’s recommendation to tailor product development for converting customers of competitors in the Lottery & Betting industry.",
     ],
+    industries: ["Financial Technology"],
   },
   {
     type: "education",
@@ -99,6 +106,7 @@ export const ENTRIES: TimelineEntry[] = [
       "Advised on the brand and strategy repositioning of a Canadian college to move the consumer perspective towards the breadth and depth of their offerings, to complement their well-known and highly respected offerings.",
       "Analysed 108 discussion board participants’ input by observing trends in the responses and consolidating key data; determined existing consumer perspectives and qualities as a baseline for recommendations to build on.",
     ],
+    industries: ["Education", "Consulting"],
   },
   {
     type: "project",
@@ -110,6 +118,7 @@ export const ENTRIES: TimelineEntry[] = [
       "Quantified and qualified the environmental impact of mosquito nets (MN) distributed in Africa by the Against Malaria Foundation (AMF) that are misused for fishing, using a bottom-up approach.",
       "Utilised Excel to estimate excess annual fish biomass caught with AMF MN compared to typical nets; measured implications with consideration of the over-fishing of juveniles, limiting fish population regrowth and increasing future risk of lost food source for local communities.",
     ],
+    industries: ["Non-Profit Organisation"],
   },
   {
     type: "project",
@@ -120,6 +129,7 @@ export const ENTRIES: TimelineEntry[] = [
     bullets: [
       "Analysed the target market/user base, financial feasibility, and functionalities of 3 non-traditional digital platforms for targeting and educating Health Care Providers about client’s prostate cancer drug in accordance with Canadian pharmaceutical advertising regulations, contributing to a 3-stage digital strategy recommendation.",
     ],
+    industries: ["Pharmaceuticals"],
   },
   {
     type: "education",
@@ -141,6 +151,7 @@ export const ENTRIES: TimelineEntry[] = [
       "Winner of $500 Pitch Competition; presented majority of team’s commercialisation plan to judges.",
       "Analysed market size, competition, and distribution of an assigned IP for a 3-person team’s commercialisation plan covering industry analysis, competitive landscape, barriers to entry, go-to-market strategy, and financials.",
     ],
+    industries: ["Medical Technology"],
   },
   {
     type: "education",
@@ -154,6 +165,8 @@ export const ENTRIES: TimelineEntry[] = [
     ],
   },
 ];
+
+export const INDUSTRIES: string[] = Array.from(new Set(ENTRIES.flatMap((entry) => entry.industries ?? [])));
 
 export interface SkillGroup {
   group: string;
@@ -186,7 +199,7 @@ export const SKILLS: SkillGroup[] = [
   {
     group: "Production & Tools",
     story: "The toolkit behind 35+ pitch decks, a rebuilt BD database, and this page itself — built with Bun, React, Tailwind CSS, and shadcn/ui via Claude Code.",
-    items: ["Cross-functional Project Management", "Excel", "PowerPoint", "Canva", "Workfront", "CRM Database Design", "Bun", "React", "Tailwind CSS", "shadcn/ui", "Claude Code"],
+    items: ["Cross-functional Project Management", "Excel", "PowerPoint", "Canva", "Workfront", "CRM Database Design", "Claude Code"],
   },
   {
     group: "Languages & Culture",

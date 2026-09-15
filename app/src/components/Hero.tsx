@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import morganPhoto from "@/assets/morgan-photo.png";
 
 export function Hero() {
@@ -18,15 +19,17 @@ export function Hero() {
         <p className="mb-4 font-mono text-[13px] tracking-widest text-brand uppercase">
           Adaptable. Authentic. Detailed.
         </p>
-        <p className="mx-auto mb-3.5 max-w-[62ch] text-base text-ink-dim sm:mx-0">
+        <p className="mx-auto mb-2 max-w-[62ch] text-base text-ink-dim sm:mx-0">
           Morgan has partnered with companies in Canada, Peru, and the UK to turn strategy into
-          go-to-market execution. Her experiences span a variety of industries including financial
-          technology, health technology, professional services, financial services, pharmaceuticals,
-          not-for-profit, and education. She currently supports on a £950k+ annual client portfolio
-          creating marketing assets for products at the launch stage through to mid-lifecycle. She
-          trained across medical science, applied science, and international business before bringing
-          that range to client-facing marketing. She prides herself on being detail-oriented, organised,
-          and personable; a trusted partner both internal and externally.
+          go-to-market execution, across financial technology, health technology, professional
+          services, financial services, pharmaceuticals, not-for-profit, and education. She currently
+          supports a £950k+ annual client portfolio creating marketing assets for products at the
+          launch stage through to mid-lifecycle.
+        </p>
+        <p className="mx-auto mb-3.5 sm:mx-0">
+          <Link to="/about" className="font-mono text-[13px] text-brand no-underline hover:underline">
+            Read more about me →
+          </Link>
         </p>
         <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 font-mono text-[13px] sm:justify-start">
           <a

@@ -22,10 +22,19 @@ function sideFor(type: EntryType): "left" | "right" {
 interface TimelineProps {
   entries: (TimelineEntry & { id: number })[];
   activeFilters: Record<EntryType, boolean>;
+  activeIndustries: Record<string, boolean>;
 }
 
-export function Timeline({ entries, activeFilters }: TimelineProps) {
-  const visible = useMemo(() => entries.filter((e) => activeFilters[e.type]), [entries, activeFilters]);
+export function Timeline({ entries, activeFilters, activeIndustries }: TimelineProps) {
+  const visible = useMemo(
+    () =>
+      entries.filter(
+        (e) =>
+          activeFilters[e.type] &&
+          (!e.industries || e.industries.length === 0 || e.industries.some((i) => activeIndustries[i])),
+      ),
+    [entries, activeFilters, activeIndustries],
+  );
   const reduced = useReducedMotion();
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -182,6 +191,18 @@ export function Timeline({ entries, activeFilters }: TimelineProps) {
                 <p className="mb-2.5 text-sm text-ink-dim">
                   {entry.org} <span className="text-ink-faint">— {entry.loc}</span>
                 </p>
+                {entry.industries && entry.industries.length > 0 && (
+                  <div className="mb-2.5 flex flex-wrap gap-1.5">
+                    {entry.industries.map((industry) => (
+                      <span
+                        key={industry}
+                        className="rounded-full border border-line bg-paper px-2 py-0.5 font-mono text-[10px] tracking-wide text-ink-faint uppercase"
+                      >
+                        {industry}
+                      </span>
+                    ))}
+                  </div>
+                )}
                 <ul className="m-0 max-w-[64ch] list-none space-y-1.5 pl-0">
                   {entry.bullets.map((b) => (
                     <li key={b} className="text-[15px] leading-relaxed text-ink">

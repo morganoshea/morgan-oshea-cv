@@ -14,6 +14,7 @@
   --brand: #146b62;
   --brand-edu: #3f7d3a;
   --brand-proj: #6a3fa0;
+  --brand-about: #a8631f;
   --brand-ink: #ffffff;
   --focus: #146b62;
 
@@ -38,8 +39,13 @@
   --radius: 0.625rem;
 }
 
+/*
+ * Dark palette is duplicated across a system-preference media query and an
+ * explicit `.dark` class so the ThemeToggle widget can override (or the
+ * `.light` class can pin light mode against) the OS setting.
+ */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not(.light) {
     --ink: #f0eee6;
     --ink-dim: #aab3ad;
     --ink-faint: #6d7671;
@@ -49,9 +55,25 @@
     --brand: #3fae9e;
     --brand-edu: #6cc26b;
     --brand-proj: #b28cf0;
+    --brand-about: #e0a45c;
     --brand-ink: #0c1211;
     --focus: #3fae9e;
   }
+}
+
+:root.dark {
+  --ink: #f0eee6;
+  --ink-dim: #aab3ad;
+  --ink-faint: #6d7671;
+  --paper: #14181a;
+  --paper-raised: #1b2123;
+  --line: #2b3230;
+  --brand: #3fae9e;
+  --brand-edu: #6cc26b;
+  --brand-proj: #b28cf0;
+  --brand-about: #e0a45c;
+  --brand-ink: #0c1211;
+  --focus: #3fae9e;
 }
 
 body {
@@ -74,6 +96,7 @@ body {
   --color-brand: var(--brand);
   --color-brand-edu: var(--brand-edu);
   --color-brand-proj: var(--brand-proj);
+  --color-brand-about: var(--brand-about);
   --color-brand-ink: var(--brand-ink);
   --color-focus: var(--focus);
 
