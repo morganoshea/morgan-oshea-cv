@@ -26,7 +26,8 @@ export const ABOUT: AboutContent = {
   ],
   closing: "I'm keen to keep growing — let's chat about what that could look like.",
   now: [
-    "Based in London, UK",
+    "Canadian based in London, UK",
+    "No visa sponsorship required",
     "Currently focused on EMEA commercial marketing strategy and asset development at Avalere Health",
     "Outside of work, I'm spending time growing my AI literacy",
   ],
