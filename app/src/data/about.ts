@@ -23,6 +23,7 @@ export const ABOUT: AboutContent = {
     },
     { label: "Authenticity", description: "I show up professionally and respectfully, but also as myself." },
     { label: "Resilience", description: "Things don't always go to plan, but I'm better for it!" },
+    { label: "Driven", description: "I take ownership, and I never shy away from hard work or a good learning opportunity." },
   ],
   closing: "I'm keen to keep growing — let's chat about what that could look like.",
   now: [
