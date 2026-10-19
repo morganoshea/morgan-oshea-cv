@@ -201,7 +201,7 @@ export const SKILLS: SkillGroup[] = [
   {
     group: "Production & Tools",
     story: "The toolkit behind 35+ pitch decks, a rebuilt BD database, and this page itself — built with Bun, React, Tailwind CSS, and shadcn/ui via Claude Code.",
-    items: ["Cross-functional Project Management", "Excel", "PowerPoint", "Canva", "Workfront", "CRM Database Design", "Claude Code"],
+    items: ["Cross-functional Project Management", "Excel", "PowerPoint", "Canva", "Workfront", "CRM Database Design", "Claude Code", "VS Code", "GitHub"],
   },
   {
     group: "Languages & Culture",
